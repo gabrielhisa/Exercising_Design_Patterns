@@ -25,3 +25,13 @@ This allows the program to not depend on concrete products and grants greater fl
  * The Application is the client code, which does not care which factory they're using as they use the abstract interfaces. It'll use the factory type set on it.
  * It is possible to configure which factory will be used in the Application
  * The main class only calls the application. All the work is behind the scenes.
+ 
+## Builder
+
+ * Creating a common interface for blade constructs. Should have all the common elements of a bladed object.
+ * Made two simple concrete builders, one for knives, one for axes. The object setters are declared in here.
+ * Created the product classes: knife and axe.
+ * Added the blade component classes: blade, handle, guard and sheath.
+ * There is also the director class, that defined the order of the building steps. Uses the build inteface, so it does not know which product is being assembled.
+ * The main class will then create a new director object to assemble the product in its correct order. This director object will be used to build a concrete, already defined product based in one of the base products (axe or knife).
+ * Then, this predefined product will be assigned to a product object. Now we have a concrete, specific product, assigned to its correct class.
