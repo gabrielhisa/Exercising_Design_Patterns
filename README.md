@@ -1,10 +1,14 @@
 # Exercising Design Patterns
 
 Studying and creating simple design pattern examples to exercise and better understand their structure, their usage and flow of thought behind their design. 
+Most of the content was learned and examples derived from the following websites:
+
+ * https://refactoring.guru
+ * https://codegym.cc/groups/posts/284-factory-design-pattern
 
 ## Factory
 
-Creational pattern makes it easier to add new types of products into the program without modifying or breaking the client code.
+Creational pattern thta makes it easier to add new types of products into the program without modifying or breaking the client code.
 By creating a common interface of products, it'll be easier to create new types of products when needed by calling a specific factory method, instead of always creating a new object (the factory method is now responsible for it).
 This simple example of a pizzeria shows how that can be done:
 
@@ -28,6 +32,11 @@ This allows the program to not depend on concrete products and grants greater fl
  
 ## Builder
 
+This creational patter makes the creation of different representations of the same product possible.
+By isolating the complex construction of the product from the client code, the code is much more flexible and easier to read.
+Each component can be changed at will, and each new product can be set as needed, without changing or creating too much code.
+This example shows how to build a simple project using this pattern:
+
  * Creating a common interface for blade constructs. Should have all the common elements of a bladed object.
  * Made two simple concrete builders, one for knives, one for axes. The object setters are declared in here.
  * Created the product classes: knife and axe.
@@ -35,3 +44,19 @@ This allows the program to not depend on concrete products and grants greater fl
  * There is also the director class, that defined the order of the building steps. Uses the build inteface, so it does not know which product is being assembled.
  * The main class will then create a new director object to assemble the product in its correct order. This director object will be used to build a concrete, already defined product based in one of the base products (axe or knife).
  * Then, this predefined product will be assigned to a product object. Now we have a concrete, specific product, assigned to its correct class.
+ 
+## Prototype
+
+The prototype pattern is used when there is need for the code to not depend on the concrete classes.
+This can be used when objects are passed from an outer source, and the cloning methods can be used to make the client code independent from the concrete classes cloned.
+Created a single example here:
+
+ * Created an abstract class as base for a tree. It has the base atributes a tree should have, the constructors, the override to equals and a clone method.
+ * Created two concrete trees, a plastic tree and an oak tree.
+ * The OakTree equals method will check if the object is as instance of an OakTree. If it is, it'll check tif the age and area values are alike.
+ * The PlasticTree equals method does the same, but only comparing the size of the plastic tree.
+ * We then create a simple method in the main method to create some objects, then some copies of them with the clone method, and then compara them to check if they're really clones.
+ * We create an instance of the plastic tree, then a clone, and add both to the list, one after the other. Then, we create and add an oak tree as well.
+ * The comparing method will then populate a list of copies with clones from the previous list. They should be all equal.
+ * A simples testing shows that all objects are of the same type, and have the same atribute values. The clone method works.
+ 
