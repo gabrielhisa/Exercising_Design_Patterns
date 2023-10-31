@@ -44,10 +44,12 @@ public class Main {
         for (int i = 0; i < trees.size(); i++){
             System.out.println(trees.get(i));
             if (trees.get(i) != treesCopy.get(i)){
+                //System.out.println(trees.get(i) + ":" + treesCopy.get(i));
                 System.out.println(i + " : Trees are different objects.");
                 if (trees.get(i).equals(treesCopy.get(i))){
                     System.out.println(i + " : And they are identical.");
                 } else {
+                    //System.out.println(trees.get(i).getClass() + " and " + treesCopy.get(i).getClass());
                     System.out.println(i + " : But they are not identical.");
                 }
             } else {
