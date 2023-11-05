@@ -5,6 +5,10 @@ Most of the content was learned and examples derived from the following websites
 
  * https://refactoring.guru
  * https://codegym.cc/groups/posts/284-factory-design-pattern
+ 
+# Creational Design Patterns
+
+Patterns that provides object creation mechanisms, for increased flexibility and reusage of code.
 
 ## Factory
 
@@ -73,3 +77,25 @@ The code example has 3 type of Singletons:
  * The second one shows what happens with the Singleton on a multithread environment: multiple instances of the class can be created when each thread calls them simultaneously
  * This is then corrected in thread safe class, by synchronizing the threads during the class' first instantiation
  * Thread safe class makes use of the volatile keyword, which will make changes to the instance visible to all threads, and the synchronized option makes possible for only one thread to access the class at a time, while the others wait
+ 
+
+# Structural Design Patterns
+
+Allows the assembling of objects and classes into larger structures, while keeping them flexible and efficient.
+
+## Adapter
+
+This pattern helps converting the interface of one object to other objects can understand it.
+Mostly used to 'connect' systems that don't talk with each other, like legacy code.
+This is done with the adapter class getting an interface from one of the objects. By using this interface, the adapter can call the necessary methods.
+Then, the adapter passes the information to the other object, in a way it can understand the information.
+
+I tried using a very simples example using charges:
+ * I have a class for a triple plugged charger, and another for a triple holed socket
+ * The charger cannot be used with a double holed socket, the charger does not fit
+ * By creating an adapter class, which extens the triple socket, we can change the method to make the charger accept the double holed socket.
+ * I know this example is rather too simple, but I liked the reference to a real world adapter. 
+ 
+This could be used to translate JSON to XML, for instance. Or MP3 to JAV files as well.
+
+
