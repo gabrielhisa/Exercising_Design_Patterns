@@ -60,3 +60,16 @@ Created a single example here:
  * The comparing method will then populate a list of copies with clones from the previous list. They should be all equal.
  * A simples testing shows that all objects are of the same type, and have the same atribute values. The clone method works.
  
+## Singleton
+
+This pattern ensures that a class only has one instance, while providing global access to said instance.
+This can be used for loggings, caching, accessing databases, etc.
+We do that by creating a private constructor, to restrict its creation by other classes.
+We also create a static variable that will be the only instance of the class, and a static public method which will be the global access point of the instance.
+You have the option to create a lazy initialization class, which will be created once needed (checkin if the class already have an instance in the constructor), or create it at program start, which would not be the best, though each of the have their ups and dows.
+
+The code example has 3 type of Singletons:
+ * The simple one, showing a very simplistic way of creating a singleton by just hiding its constructor and implementing a static creation method
+ * The second one shows what happens with the Singleton on a multithread environment: multiple instances of the class can be created when each thread calls them simultaneously
+ * This is then corrected in thread safe class, by synchronizing the threads during the class' first instantiation
+ * Thread safe class makes use of the volatile keyword, which will make changes to the instance visible to all threads, and the synchronized option makes possible for only one thread to access the class at a time, while the others wait
