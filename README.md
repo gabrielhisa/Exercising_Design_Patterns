@@ -66,7 +66,7 @@ The code example has three types of Singletons:
 
 # Structural Design Patterns
 
-## Adapter (continued)
+## Adapter
 
 This is done with the adapter class getting an interface from one of the objects. By using this interface, the adapter can call the necessary methods. Then, the adapter passes the information to the other object in a way it can understand the information.
 
