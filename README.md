@@ -88,3 +88,19 @@ Using the simple example above to illustrate how the bridge pattern could be use
  * We have two separate classes, shapes and colors. Without the bridge class, we'd have to create a new class for each combination of both.
  * With the bridge class, we can implement the shape interface to use its methods and create a new instance of a color inside the bridge class.
  * This way, we can use both classes and create new combinations of shapes and colors inside it, then return them as we wish.
+ 
+## Composite
+
+Allows the composition of objects in a tree structure, to work with them as if they were individual objects.
+For instance, what if I have a pallet, with boxes of vegan milk, and I wanted to know the total price of the pallet?
+Instead of unwrapping the classes and summing the cost, we can attribute a common interface to all of them and use methods to calculate their price. There'd be no need to know the object of each class, as the method would be called and passed down the tree.
+
+Using boxes of products as an example:
+ * All of them have the same common interface: a product component with a method to print their values and to get their price
+ * We create the product itself as a leaf in the tree, which is a carton of vegan milk
+ * This carton can be added into boxes
+ * Which can be added into a pallet. Boxes have a set ammount of cartons, and the same applies to pallets
+ * If I want to know the price of an entire box, all I have to do is to set the getPrice method to sum all of the carton inside the box. The same would then be applied to the pallet, summing all the boxes in the pallet
+ 
+Most of the work is done by the leaf component.
+This is a simple way to understand how many components inside other components can bring information upwards in the structure.
