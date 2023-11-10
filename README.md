@@ -104,3 +104,14 @@ Using boxes of products as an example:
  
 Most of the work is done by the leaf component.
 This is a simple way to understand how many components inside other components can bring information upwards in the structure.
+
+## Decorator (really like in decorating something)
+
+This pattern wraps an object with decorators, which add or alter the behaviour of the original object. Like creating a new class, but instead, you 'reuse' the original class and add to its behaviour, without modifying its structure.
+
+This is a very, very simple example of a real life usage of the decorator pattern:
+ * Let's say I have a program that makes reports. The basic report is just a simple document
+ * The decorator could be used to decorate this document with color accessibility, or maybe special text for those with dyslexia.
+ * This could be done by creating a common interface for all documents. A basic document would implement this interface.
+ * We then create an abstract decorator, which implements the same interface and creates a protected instance of the document object.
+ * Concrete decoratos would then add to the method of creating creating the document
