@@ -15,6 +15,7 @@ public class CharacterFactory {
             charCache.put(symbol, character);
         }
 
+        System.out.println(charCache);
         return character;
     }
 }

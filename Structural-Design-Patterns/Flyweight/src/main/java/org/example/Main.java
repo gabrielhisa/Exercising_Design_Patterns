@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Client, manages the extrinsic state (font and size)
-        String text = "Hi there.";
+        String text = "Aaa bb cde1";
         String font = "Alberta";
         int size = 15;
 
