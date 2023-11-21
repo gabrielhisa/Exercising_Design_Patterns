@@ -115,3 +115,13 @@ This is a very, very simple example of a real life usage of the decorator patter
  * This could be done by creating a common interface for all documents. A basic document would implement this interface.
  * We then create an abstract decorator, which implements the same interface and creates a protected instance of the document object.
  * Concrete decoratos would then add to the method of creating creating the document
+ 
+## Facade
+
+Provides a simplified interface to a library, a framework, or any other complex set of classes. Provides a unified interface to a set of interfaces, which would be good to separate the interface from the complexity of many sub systems.
+
+ * In this example, we create some interfaces (not the class type) that a home theater uses
+ * All of them can be called in a 'master' class, the facade, that calls them
+ * This would be the main interface between the user and the entire system
+ 
+This pattern can end up creating a 'god object', which would be a an anti pattern, so care must be taken to avoid this.
