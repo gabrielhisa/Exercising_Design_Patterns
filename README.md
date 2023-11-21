@@ -125,3 +125,19 @@ Provides a simplified interface to a library, a framework, or any other complex 
  * This would be the main interface between the user and the entire system
  
 This pattern can end up creating a 'god object', which would be a an anti pattern, so care must be taken to avoid this.
+
+## Flyweight
+
+This is a tough one. This pattern is used to minimize memory usage by sharing as much resources possible with related objects, like when a large number of similar objects need to be created and used, and the shared state among them can be extracted and managed externally (from the objects).
+
+The idea is to separate intrinsic and extrinsic states of an object.
+ * Intrinsic state is part of the object that can be shared among multiple instances
+ * Extrinsic state is the part that varies and must be stored separately for each instance
+ 
+The main components of the pattern are:
+ * Interface/Abstract class - Defines the interface through which concrete flyweights are able to receive and act on extrinsic (stored separately for each instance) state. Has methods that allows the client to pass the extrinsic state to the flyweight.
+ * Concrete Flyweight - The actual flyweight implementation. Contains the intrinsic state, which can be shared, and it relies on extrinsic state provided by the client to perform its operation.
+ * Flywight Factory - Manages and creates the flywight objects. Should have a data structure to store and call the flyweights when needed.
+ * Client, responsible for managing the extrinsic states and passing it into the flyweights
+ 
+This simple example uses a text editor that optimizes the memory usage of characters. This program should use the same object to show each character used in a phrase in the client code. The intrinsic state is shared among instances of the object. So, for instance, if I print an 'a' character, it will use the same object stored in the 'cache' we created.
